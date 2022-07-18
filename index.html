@@ -4,52 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <script src="index.js" defer></script>
+    <link href="/styles/output.css" rel="stylesheet" />
     <title>Gokulram A</title>
-    <style>
-      .fade {
-        width: 200px;
-        height: 200px;
-        background: red;
-        opacity: 0;
-      }
-
-      .elementToFadeOut {
-        animation: fadeOut 0.3s linear forwards;
-      }
-
-      @keyframes fadeOut {
-        0% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-
-      .elementToFadeIn {
-        animation: fadeIn 0.3s linear forwards;
-      }
-
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-    </style>
   </head>
-  <body>
+  <body class="text-gray-800 dark:text-gray-100 bg-gray-100 dark:bg-slate-900">
     <div
-      class="w-full min-h-screen bg-gray-100 flex flex-col justify-center items-center"
+      class="p-5 w-full min-h-screen flex flex-col justify-center items-center"
       style="font-family: 'Space Mono', monospace"
     >
       <div class="flex flex-col justify-center items-center">
@@ -94,7 +61,7 @@
       </div>
       <section id="home">
         <div class="mt-4" style="width: 30rem">
-          <hr class="w-full mb-2 border-gray-300" />
+          <hr class="w-full mb-2 border-gray-300 dark:border-gray-600" />
           <h3 class="text-xl font-semibold text-center mb-1">About</h3>
           <div class="text-center">
             Hi there! I'm a 19 year old engineering undergrad pursuing B.Tech
@@ -103,9 +70,9 @@
             <div>You can checkout some of my projects down below!</div>
           </div>
 
-          <hr class="w-full my-2 border-gray-300" />
+          <hr class="w-full my-3 border-gray-300 dark:border-gray-600" />
         </div>
-        <div class="mt-1">
+        <div class="mt-2">
           <h3 class="text-xl text-center font-semibold mb-2">Skills</h3>
           <img
             src="https://skillicons.dev/icons?i=python,django,flask,html,css,js,ts,react,tailwind"
@@ -116,10 +83,10 @@
       </section>
       <section class="mt-2" id="projects">
         <h2 class="text-xl font-semibold text-center my-4">Projects</h2>
-        <div class="grid gap-3">
+        <div class="grid gap-4">
           <a href="survey_form/survey.html" target="_blank">
             <div
-              class="flex items-center gap-3 p-4 bg-blue-300 text-gray-700 rounded-lg shadow-lg hover:scale-105 transition duration-200 ease-in-out"
+              class="flex items-center gap-3 p-4 bg-blue-300 dark:bg-blue-400 text-gray-700 dark:text-gray-50 rounded-lg shadow-lg hover:scale-105 transition duration-200 ease-in-out"
             >
               <img
                 src="assets/survey.png"
@@ -136,7 +103,7 @@
             target="_blank"
           >
             <div
-              class="flex items-center gap-3 p-4 bg-orange-300 text-gray-700 rounded-lg shadow-lg hover:scale-105 transition duration-200 ease-in-out"
+              class="flex items-center gap-3 p-4 bg-orange-300 dark:bg-orange-400 text-gray-700 dark:text-gray-50 rounded-lg shadow-lg hover:scale-105 transition duration-200 ease-in-out"
             >
               <img
                 src="assets/martial_arts.png"
@@ -150,14 +117,111 @@
           </a>
         </div>
       </section>
-      <script src="index.js"></script>
+
       <button
         id="toggle"
         onclick="setViewProjects()"
-        class="border-gray-800 border-2 rounded-lg px-5 py-2.5 relative top-10 hover:bg-gray-800 hover:text-white transition duration-300 ease-in-out"
+        class="border-gray-800 dark:border-gray-200 border-2 rounded-lg px-5 py-2.5 relative top-10 hover:bg-gray-800 dark:hover:bg-gray-100 hover:text-gray-100 dark:hover:text-gray-700"
       >
         View Projects
       </button>
+
+      <div class="absolute left-5 top-5 flex gap-4">
+        <a
+          href="https://github.com/GokulramGHV"
+          class="hover:scale-110 transition duration-75 ease-out"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            fill="currentColor"
+            class="bi bi-github"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+            />
+          </svg>
+        </a>
+        <a
+          href="mailto:gokulharividhya@gmail.com"
+          class="hover:scale-110 transition duration-75 ease-out"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            fill="currentColor"
+            class="bi bi-envelope-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"
+            />
+          </svg>
+        </a>
+
+        <a
+          href="https://twitter.com/AGokulram"
+          class="hover:scale-110 transition duration-75 ease-out"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            fill="currentColor"
+            class="bi bi-twitter"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <button
+        id="sun"
+        onclick="toggle()"
+        class="absolute top-5 right-5 border-gray-800 dark:border-gray-200 border-2 rounded-lg p-2 hover:bg-gray-800 dark:hover:bg-gray-100 hover:text-gray-100 dark:hover:text-gray-700"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-brightness-high-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+          />
+        </svg>
+      </button>
+      <button
+        id="moon"
+        onclick="toggle()"
+        class="absolute top-5 right-5 border-gray-800 dark:border-gray-200 border-2 rounded-lg p-2 hover:bg-gray-800 dark:hover:bg-gray-100 hover:text-gray-100 dark:hover:text-gray-700"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-moon"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"
+          />
+        </svg>
+      </button>
+
+      <footer class="absolute bottom-3 right-5 text-sm">
+        Copyright <span class="text-md">©</span> 2022 Gokulram A
+      </footer>
     </div>
   </body>
 </html>

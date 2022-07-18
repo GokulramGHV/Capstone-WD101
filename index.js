@@ -1,3 +1,18 @@
+let darkMode = false;
+document.getElementById('sun').style.display = 'none';
+function toggle() {
+  darkMode = !darkMode;
+  if (darkMode) {
+    document.getElementById('moon').style.display = 'none';
+    document.getElementById('sun').style.display = 'block';
+    document.getElementsByTagName('HTML')[0].classList.add('dark');
+  } else {
+    document.getElementById('moon').style.display = 'block';
+    document.getElementById('sun').style.display = 'none';
+    document.getElementsByTagName('HTML')[0].classList.remove('dark');
+  }
+}
+
 let viewProjects = false;
 document.getElementById('projects').style.display = 'none';
 function setViewProjects() {
