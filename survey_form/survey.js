@@ -45,7 +45,7 @@ ${entries}</tbody> </table>`;
   let details = document.getElementById('entries');
   details.innerHTML = table;
 };
-
+displayEntries();
 const name = document.getElementById('name');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
@@ -141,4 +141,3 @@ const saveUserForm = (event) => {
 
 let form = document.getElementById('form');
 form.addEventListener('submit', saveUserForm, true);
-displayEntries();
