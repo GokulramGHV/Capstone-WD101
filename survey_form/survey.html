@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="survey.js" defer></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <title>Survey form</title>
 
@@ -26,25 +27,8 @@
       }
     </style>
   </head>
-  <body>
-    <div
-      class="w-full min-h-screen bg-gray-50 flex justify-center items-center"
-    >
-      <div id="div-entries">
-        <div
-          id="entries"
-          class="bg-gray-100 pt-5 rounded-lg drop-shadow-lg"
-        ></div>
-        <div class="w-full flex justify-center">
-          <button
-            class="bg-blue-500 rounded px-5 my-4 mx-auto text-white py-2.5 hover:bg-blue-600"
-            onclick="setViewEntries()"
-          >
-            Back to Survey Form
-          </button>
-        </div>
-      </div>
-
+  <body class="bg-gray-50">
+    <div class="w-full h-fit flex justify-center items-center py-16">
       <div
         class="bg-white p-5 rounded-lg drop-shadow-lg"
         id="survey-form"
@@ -104,21 +88,37 @@
             Submit
           </button>
         </form>
-        <script src="survey.js"></script>
-        <div class="grid grid-cols-2 gap-2 w-full mt-2 text-lg">
+
+        <!-- <div class="grid grid-cols-2 gap-2 w-full mt-2 text-lg">
           <button
             onclick="reset()"
             class="w-full bg-red-500 rounded px-4 text-white py-2.5 hover:bg-red-600"
           >
             Reset
           </button>
-          <button
+           <button
             onclick="setViewEntries()"
             class="w-full bg-emerald-500 rounded px-4 text-white py-2.5 hover:bg-emerald-600"
           >
             View Entries
           </button>
-        </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="flex justify-center items-center mb-16">
+      <div id="div-entries">
+        <div
+          id="entries"
+          class="bg-gray-100 pt-5 rounded-lg drop-shadow-lg"
+        ></div>
+        <!-- <div class="w-full flex justify-center">
+          <button
+            class="bg-blue-500 rounded px-5 my-4 mx-auto text-white py-2.5 hover:bg-blue-600"
+            onclick="setViewEntries()"
+          >
+            Back to Survey Form
+          </button>
+        </div> -->
       </div>
     </div>
   </body>

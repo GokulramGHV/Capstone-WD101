@@ -1,15 +1,15 @@
-let viewEntries = false;
-document.getElementById('div-entries').style.display = 'none';
-function setViewEntries() {
-  viewEntries = !viewEntries;
-  if (viewEntries) {
-    document.getElementById('div-entries').style.display = 'block';
-    document.getElementById('survey-form').style.display = 'none';
-  } else {
-    document.getElementById('div-entries').style.display = 'none';
-    document.getElementById('survey-form').style.display = 'block';
-  }
-}
+// let viewEntries = false;
+// document.getElementById('div-entries').style.display = 'none';
+// function setViewEntries() {
+//   viewEntries = !viewEntries;
+//   if (viewEntries) {
+//     document.getElementById('div-entries').style.display = 'block';
+//     document.getElementById('survey-form').style.display = 'none';
+//   } else {
+//     document.getElementById('div-entries').style.display = 'none';
+//     document.getElementById('survey-form').style.display = 'block';
+//   }
+// }
 
 const displayEntries = () => {
   const savedUserEntries = localStorage.getItem('user-entries');
@@ -70,20 +70,44 @@ email.addEventListener('input', checkValid.bind(event, email));
 password.addEventListener('input', checkValid.bind(event, password));
 dob.addEventListener('input', checkValid.bind(event, dob));
 
-let birthYear = Number(dob.value.slice(0, 4));
-let currDate = new Date();
-let currYear = Number(currDate.getFullYear());
-console.log(currYear);
-console.log(birthYear);
-dob.setAttribute('max', `${currYear - 18}-01-01`);
-dob.setAttribute('min', `${currYear - 55}-01-01`);
-
 email.addEventListener('input', function (event) {
   if (email.validity.typeMismatch) {
     email.setCustomValidity('This is not a valid email address!');
     email.reportValidity();
   } else {
     email.setCustomValidity('');
+  }
+});
+
+let today = new Date();
+today.setFullYear(today.getFullYear() - 55);
+dob.setAttribute(
+  'min',
+  `${today.getFullYear()}-${String(today.getMonth()).padStart(2, '0')}-${String(
+    today.getDate()
+  ).padStart(2, '0')}`
+);
+today = new Date();
+today.setFullYear(today.getFullYear() - 18);
+dob.setAttribute(
+  'max',
+  `${today.getFullYear()}-${String(today.getMonth()).padStart(2, '0')}-${String(
+    today.getDate()
+  ).padStart(2, '0')}`
+);
+
+dob.addEventListener('input', function (event) {
+  let today = new Date();
+  let birthday = new Date(dob.value);
+  let age = Math.floor(
+    Math.abs(today - birthday) / (1000 * 60 * 60 * 24 * 365)
+  );
+  console.log(age);
+  if (age < 18 || age > 55) {
+    dob.setCustomValidity('Your age must be between 18 and 55');
+    dob.reportValidity();
+  } else {
+    dob.setCustomValidity('');
   }
 });
 
@@ -112,6 +136,7 @@ const saveUserForm = (event) => {
   localStorage.setItem('user-entries', JSON.stringify(userEntries));
   displayEntries();
   alert('Form Submitted!');
+  reset();
 };
 
 let form = document.getElementById('form');
